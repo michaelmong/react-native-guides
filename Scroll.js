@@ -1,22 +1,26 @@
 import React from "react";
-import { StyleSheet, Text, ScrollView } from "react-native";
+import { StyleSheet, Text, ScrollView, View } from "react-native";
 
 export default Scroll = (props) => {
   return (
-    <ScrollView style={styles.scroll}>
-      {props.searchArray.map((item) => (
-        <Text key={item.key}>{item.value}</Text>
-      ))}
-    </ScrollView>
+    <View style={styles.content}>
+      <Text style={{ fontWeight: "bold" }}>ScrollView</Text>
+      <ScrollView>
+        {props.searchArray.map((item) => (
+          <Text key={item.key}>{item.value}</Text>
+        ))}
+      </ScrollView>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  scroll: {
+  content: {
     flexDirection: "column",
-    width: "80%",
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
     backgroundColor: "#fff",
-    paddingTop: 20,
     borderColor: "white",
     borderWidth: 1,
   },

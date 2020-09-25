@@ -38,8 +38,10 @@ export default function App() {
         />
         <Button title="SEARCH" onPress={searchHandler} />
       </View>
-      {/*<Scroll searchArray={searchHistory} />*/}
-      <Flat searchArray={searchHistory} />
+      <View style={styles.history}>
+        <Scroll searchArray={searchHistory} />
+        <Flat searchArray={searchHistory} />
+      </View>
     </SafeAreaView>
   );
 }
@@ -52,6 +54,17 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-evenly",
     paddingTop: 50,
+    borderColor: "white",
+    borderWidth: 1,
+  },
+  history: {
+    flex: 1,
+    flexDirection: "row",
+    width: "100%",
+    backgroundColor: "#fff",
+    alignItems: "baseline",
+    justifyContent: "center",
+    paddingTop: 0,
     borderColor: "white",
     borderWidth: 1,
   },
